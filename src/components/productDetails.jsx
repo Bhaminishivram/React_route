@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 class ProductDetails extends Component {
   handleSave = () => {
-    // Navigate to /products
+    // Navigate to /products 
+     // this.props.history.push('/products'); // we can click on back button in browser and see the previous page 
+     this.props.history.replace('/products'); //we cam implement this in login pages.
   };
 
   render() {

@@ -30,7 +30,9 @@ class App extends Component {
         <Route path="/products/" render={(props) => <Products sort="newset" {...props}/>}/> 
         {/* //this will include the default Route props  */}
         <Route path="/posts/:year?/:month?" component={Posts}/>
-        <Route path="/admin" component={Dashboard}/> 
+        <Route path="/admin" component={Dashboard}/>  
+        {/* //redirect from one url to another */}
+        <Redirect from="/messages" to="/posts" />
         <Route path="/not-found" component={NotFound} />
         <Route path="/" exact  component={Home}/> 
         <Redirect to="not-found"/>

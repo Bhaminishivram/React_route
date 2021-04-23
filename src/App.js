@@ -15,15 +15,19 @@ import "./App.css";
  // rendered based on given url  
   
  //Route Component is a wrapper around the component that we pass and if the path matches 
- // it will render the component and it will automatically injects these props (history, match,location ) into components
+ // it will render the component and it will automatically injects these props 
+ //(history, match,location ) into components
 class App extends Component {
   render() {
     return (
       <div>
         <NavBar /> 
         <div className="content">  
-        <Switch>
-        <Route path="/products" component={Products}/> 
+        <Switch> 
+          {/* <Route path="/products"  component={products}/>*/}
+        {/* <Route path="/products" render={() => <Products sort="newset"/>}/>  // this overwrite default Route props */}
+        <Route path="/products" render={(props) => <Products sort="newset" {...props}/>}/> 
+        {/* //this will include the default Route props  */}
         <Route path="/posts" component={Posts}/>
         <Route path="/admin" component={Dashboard}/>
         <Route path="/"  component={Home}/>

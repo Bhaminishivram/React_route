@@ -29,7 +29,7 @@ class App extends Component {
         <Route path="/products/:id" component={ProductDetails} />
         <Route path="/products/" render={(props) => <Products sort="newset" {...props}/>}/> 
         {/* //this will include the default Route props  */}
-        <Route path="/posts/:year/:month" component={Posts}/>
+        <Route path="/posts/:year?/:month?" component={Posts}/>
         <Route path="/admin" component={Dashboard}/>
         <Route path="/"  component={Home}/>
         </Switch>

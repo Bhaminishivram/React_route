@@ -26,7 +26,8 @@ class App extends Component {
         <Switch> 
           {/* <Route path="/products"  component={products}/>*/}
         {/* <Route path="/products" render={() => <Products sort="newset"/>}/>  // this overwrite default Route props */}
-        <Route path="/products" render={(props) => <Products sort="newset" {...props}/>}/> 
+        <Route path="/products/:id" component={ProductDetails} />
+        <Route path="/products/" render={(props) => <Products sort="newset" {...props}/>}/> 
         {/* //this will include the default Route props  */}
         <Route path="/posts" component={Posts}/>
         <Route path="/admin" component={Dashboard}/>
